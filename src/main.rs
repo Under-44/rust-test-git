@@ -1,16 +1,13 @@
-
-fn main() {
-    let s = String::from("hello");
-
-    takes_ownership(&s);
-
-    println!("{}", s);
-
-    println!("{}", &s[1..]);
-
+fn main() 
+{
+    let my_string = two_literals_to_string("Danniel", "Radcliffe");
+    println!("{}", my_string);
 }
 
 
-fn takes_ownership(some_string: &String) { // some_string comes into scope
-    println!("{}", some_string);
+///### adds two literals with format
+///returns String type
+fn two_literals_to_string(string1: &str, string2: &str) -> String
+{
+    format!("{} - {}", string1, string2)
 }
