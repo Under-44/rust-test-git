@@ -1,7 +1,6 @@
 fn main() 
 {
-    let my_string = two_literals_to_string("Danniel", "Radcliffe");
-    println!("{}", my_string);
+    println!("{}", two_literals_to_string("Danniel", "Radcliffe"));
 }
 
 
