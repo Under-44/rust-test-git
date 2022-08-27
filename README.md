@@ -1,5 +1,5 @@
 # RUST TEST GIT
 
-yeah just a wee lil test
-
-another change
+testing git sytax and learning
+rust ownership at the same time
+just a lil test

@@ -2,16 +2,17 @@
 // using git to get familier with syntax
 fn main()
 {    
-    println!("{}", two_literals_to_string("Danniel", "Radcliffe"));         //these are just some little tests for the
-    println!("{}", add_char_to_string(String::from("Danniel "), 'G'));      //two fuctions in here. just testing how
-    println!("{}", add_char_to_string("Jason ".to_owned(), 'T'));           //ownership works and that jazz
-  
-    let testing = String::from("Hello, world");
-    println!("{}", add_char_to_string(testing, '!'));
+    //these are just some little tests
+    println!("{}", two_literals_to_string("Danniel", "Radcliffe"));
+    println!("{}", add_char_to_string(&mut String::from("Danniel "), 'G'));
+    println!("{}", add_char_to_string(&mut "Jason ".to_owned(), 'T'));
+
+    let mut testing: String = String::from("Hello, world");
+    println!("{}", add_char_to_string(&mut testing, '!'));
 }
 
 
-///### adds two literals with format
+///### adds two literals with `format!` macro
 ///```
 /// return String
 ///```
@@ -22,12 +23,14 @@ fn two_literals_to_string(string1: &str, string2: &str) -> String
 }
 
 
-///### adds a char onto end of String
+///### appends `char` onto end of `String`
+/// this function is useless, since you
+/// can do this functionality in one line
 ///```
 ///return String 
 ///```
-fn add_char_to_string(mut my_string: String, my_char: char) -> String
+fn add_char_to_string(my_string: &mut String, my_char: char) -> String
 {
     my_string.push(my_char);
-    my_string
+    my_string.to_string()
 }
